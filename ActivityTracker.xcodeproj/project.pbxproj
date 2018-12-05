@@ -8,20 +8,72 @@
 
 /* Begin PBXBuildFile section */
 		3423531821B5AA21000B4624 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3423531721B5AA21000B4624 /* AppDelegate.swift */; };
-		3423531A21B5AA21000B4624 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3423531921B5AA21000B4624 /* ViewController.swift */; };
 		3423531D21B5AA21000B4624 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3423531B21B5AA21000B4624 /* Main.storyboard */; };
 		3423531F21B5AA22000B4624 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3423531E21B5AA22000B4624 /* Assets.xcassets */; };
 		3423532221B5AA22000B4624 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3423532021B5AA22000B4624 /* LaunchScreen.storyboard */; };
+		3423533121B5AAD5000B4624 /* ActivitiesPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3423532B21B5AAD5000B4624 /* ActivitiesPresenter.swift */; };
+		3423533221B5AAD5000B4624 /* ActivitiesWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3423532C21B5AAD5000B4624 /* ActivitiesWorker.swift */; };
+		3423533321B5AAD5000B4624 /* ActivitiesRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3423532D21B5AAD5000B4624 /* ActivitiesRouter.swift */; };
+		3423533421B5AAD5000B4624 /* ActivitiesModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3423532E21B5AAD5000B4624 /* ActivitiesModels.swift */; };
+		3423533521B5AAD5000B4624 /* ActivitiesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3423532F21B5AAD5000B4624 /* ActivitiesViewController.swift */; };
+		3423533621B5AAD5000B4624 /* ActivitiesInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3423533021B5AAD5000B4624 /* ActivitiesInteractor.swift */; };
+		3423533921B5ACF5000B4624 /* ActivitiesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3423533821B5ACF5000B4624 /* ActivitiesTableViewCell.swift */; };
+		342F448321B8475300B0B61C /* AddMembersPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 342F447D21B8475300B0B61C /* AddMembersPresenter.swift */; };
+		342F448421B8475300B0B61C /* AddMembersWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 342F447E21B8475300B0B61C /* AddMembersWorker.swift */; };
+		342F448521B8475300B0B61C /* AddMembersRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 342F447F21B8475300B0B61C /* AddMembersRouter.swift */; };
+		342F448621B8475300B0B61C /* AddMembersModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 342F448021B8475300B0B61C /* AddMembersModels.swift */; };
+		342F448721B8475300B0B61C /* AddMembersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 342F448121B8475300B0B61C /* AddMembersViewController.swift */; };
+		342F448821B8475300B0B61C /* AddMembersInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 342F448221B8475300B0B61C /* AddMembersInteractor.swift */; };
+		342F448B21B8581A00B0B61C /* MemberEntity+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 342F448921B8581A00B0B61C /* MemberEntity+CoreDataClass.swift */; };
+		342F448C21B8581A00B0B61C /* MemberEntity+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 342F448A21B8581A00B0B61C /* MemberEntity+CoreDataProperties.swift */; };
+		34CF0E4321B6F234008C757F /* Common.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34CF0E4221B6F234008C757F /* Common.swift */; };
+		34CF0E4821B6F2B9008C757F /* ActivityTracker.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 34CF0E4621B6F2B9008C757F /* ActivityTracker.xcdatamodeld */; };
+		34CF0E4A21B6F2F2008C757F /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34CF0E4921B6F2F2008C757F /* CoreDataManager.swift */; };
+		34CF0E5221B6F40B008C757F /* AddActivitiesPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34CF0E4C21B6F40B008C757F /* AddActivitiesPresenter.swift */; };
+		34CF0E5321B6F40B008C757F /* AddActivitiesWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34CF0E4D21B6F40B008C757F /* AddActivitiesWorker.swift */; };
+		34CF0E5421B6F40B008C757F /* AddActivitiesRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34CF0E4E21B6F40B008C757F /* AddActivitiesRouter.swift */; };
+		34CF0E5521B6F40B008C757F /* AddActivitiesModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34CF0E4F21B6F40B008C757F /* AddActivitiesModels.swift */; };
+		34CF0E5621B6F40B008C757F /* AddActivitiesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34CF0E5021B6F40B008C757F /* AddActivitiesViewController.swift */; };
+		34CF0E5721B6F40B008C757F /* AddActivitiesInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34CF0E5121B6F40B008C757F /* AddActivitiesInteractor.swift */; };
+		34CF0E5D21B70F0E008C757F /* ActivityEntity+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34CF0E5B21B70F0E008C757F /* ActivityEntity+CoreDataClass.swift */; };
+		34CF0E5E21B70F0E008C757F /* ActivityEntity+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34CF0E5C21B70F0E008C757F /* ActivityEntity+CoreDataProperties.swift */; };
+		34FBAFEB21B841B600E3AF79 /* MemberCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34FBAFEA21B841B600E3AF79 /* MemberCollectionViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		3423531421B5AA21000B4624 /* ActivityTracker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ActivityTracker.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3423531721B5AA21000B4624 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		3423531921B5AA21000B4624 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		3423531C21B5AA21000B4624 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		3423531E21B5AA22000B4624 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3423532121B5AA22000B4624 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		3423532321B5AA22000B4624 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3423532B21B5AAD5000B4624 /* ActivitiesPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivitiesPresenter.swift; sourceTree = "<group>"; };
+		3423532C21B5AAD5000B4624 /* ActivitiesWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivitiesWorker.swift; sourceTree = "<group>"; };
+		3423532D21B5AAD5000B4624 /* ActivitiesRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivitiesRouter.swift; sourceTree = "<group>"; };
+		3423532E21B5AAD5000B4624 /* ActivitiesModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivitiesModels.swift; sourceTree = "<group>"; };
+		3423532F21B5AAD5000B4624 /* ActivitiesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivitiesViewController.swift; sourceTree = "<group>"; };
+		3423533021B5AAD5000B4624 /* ActivitiesInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivitiesInteractor.swift; sourceTree = "<group>"; };
+		3423533821B5ACF5000B4624 /* ActivitiesTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivitiesTableViewCell.swift; sourceTree = "<group>"; };
+		342F447D21B8475300B0B61C /* AddMembersPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddMembersPresenter.swift; sourceTree = "<group>"; };
+		342F447E21B8475300B0B61C /* AddMembersWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddMembersWorker.swift; sourceTree = "<group>"; };
+		342F447F21B8475300B0B61C /* AddMembersRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddMembersRouter.swift; sourceTree = "<group>"; };
+		342F448021B8475300B0B61C /* AddMembersModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddMembersModels.swift; sourceTree = "<group>"; };
+		342F448121B8475300B0B61C /* AddMembersViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddMembersViewController.swift; sourceTree = "<group>"; };
+		342F448221B8475300B0B61C /* AddMembersInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddMembersInteractor.swift; sourceTree = "<group>"; };
+		342F448921B8581A00B0B61C /* MemberEntity+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MemberEntity+CoreDataClass.swift"; sourceTree = "<group>"; };
+		342F448A21B8581A00B0B61C /* MemberEntity+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MemberEntity+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		34CF0E4221B6F234008C757F /* Common.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Common.swift; sourceTree = "<group>"; };
+		34CF0E4721B6F2B9008C757F /* ActivityTracker.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = ActivityTracker.xcdatamodel; sourceTree = "<group>"; };
+		34CF0E4921B6F2F2008C757F /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
+		34CF0E4C21B6F40B008C757F /* AddActivitiesPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddActivitiesPresenter.swift; sourceTree = "<group>"; };
+		34CF0E4D21B6F40B008C757F /* AddActivitiesWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddActivitiesWorker.swift; sourceTree = "<group>"; };
+		34CF0E4E21B6F40B008C757F /* AddActivitiesRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddActivitiesRouter.swift; sourceTree = "<group>"; };
+		34CF0E4F21B6F40B008C757F /* AddActivitiesModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddActivitiesModels.swift; sourceTree = "<group>"; };
+		34CF0E5021B6F40B008C757F /* AddActivitiesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddActivitiesViewController.swift; sourceTree = "<group>"; };
+		34CF0E5121B6F40B008C757F /* AddActivitiesInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddActivitiesInteractor.swift; sourceTree = "<group>"; };
+		34CF0E5B21B70F0E008C757F /* ActivityEntity+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ActivityEntity+CoreDataClass.swift"; sourceTree = "<group>"; };
+		34CF0E5C21B70F0E008C757F /* ActivityEntity+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ActivityEntity+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		34FBAFEA21B841B600E3AF79 /* MemberCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemberCollectionViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,14 +106,104 @@
 		3423531621B5AA21000B4624 /* ActivityTracker */ = {
 			isa = PBXGroup;
 			children = (
+				34CF0E4121B6F190008C757F /* Entities */,
+				34CF0E4021B6F175008C757F /* Common */,
+				3423532921B5AA61000B4624 /* Scenes */,
 				3423531721B5AA21000B4624 /* AppDelegate.swift */,
-				3423531921B5AA21000B4624 /* ViewController.swift */,
 				3423531B21B5AA21000B4624 /* Main.storyboard */,
 				3423531E21B5AA22000B4624 /* Assets.xcassets */,
 				3423532021B5AA22000B4624 /* LaunchScreen.storyboard */,
 				3423532321B5AA22000B4624 /* Info.plist */,
+				34CF0E4621B6F2B9008C757F /* ActivityTracker.xcdatamodeld */,
 			);
 			path = ActivityTracker;
+			sourceTree = "<group>";
+		};
+		3423532921B5AA61000B4624 /* Scenes */ = {
+			isa = PBXGroup;
+			children = (
+				34FBAFEC21B8463800E3AF79 /* AddMembers */,
+				34CF0E4B21B6F3E6008C757F /* AddActivities */,
+				3423532A21B5AAA4000B4624 /* Activities */,
+			);
+			path = Scenes;
+			sourceTree = "<group>";
+		};
+		3423532A21B5AAA4000B4624 /* Activities */ = {
+			isa = PBXGroup;
+			children = (
+				3423533721B5ACD9000B4624 /* CustomViews */,
+				3423532B21B5AAD5000B4624 /* ActivitiesPresenter.swift */,
+				3423532C21B5AAD5000B4624 /* ActivitiesWorker.swift */,
+				3423532D21B5AAD5000B4624 /* ActivitiesRouter.swift */,
+				3423532E21B5AAD5000B4624 /* ActivitiesModels.swift */,
+				3423532F21B5AAD5000B4624 /* ActivitiesViewController.swift */,
+				3423533021B5AAD5000B4624 /* ActivitiesInteractor.swift */,
+			);
+			path = Activities;
+			sourceTree = "<group>";
+		};
+		3423533721B5ACD9000B4624 /* CustomViews */ = {
+			isa = PBXGroup;
+			children = (
+				3423533821B5ACF5000B4624 /* ActivitiesTableViewCell.swift */,
+			);
+			path = CustomViews;
+			sourceTree = "<group>";
+		};
+		34CF0E4021B6F175008C757F /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				34CF0E4221B6F234008C757F /* Common.swift */,
+				34CF0E4921B6F2F2008C757F /* CoreDataManager.swift */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
+		34CF0E4121B6F190008C757F /* Entities */ = {
+			isa = PBXGroup;
+			children = (
+				342F448921B8581A00B0B61C /* MemberEntity+CoreDataClass.swift */,
+				342F448A21B8581A00B0B61C /* MemberEntity+CoreDataProperties.swift */,
+				34CF0E5B21B70F0E008C757F /* ActivityEntity+CoreDataClass.swift */,
+				34CF0E5C21B70F0E008C757F /* ActivityEntity+CoreDataProperties.swift */,
+			);
+			path = Entities;
+			sourceTree = "<group>";
+		};
+		34CF0E4B21B6F3E6008C757F /* AddActivities */ = {
+			isa = PBXGroup;
+			children = (
+				34CF0E5821B6F502008C757F /* CustomViews */,
+				34CF0E4C21B6F40B008C757F /* AddActivitiesPresenter.swift */,
+				34CF0E4D21B6F40B008C757F /* AddActivitiesWorker.swift */,
+				34CF0E4E21B6F40B008C757F /* AddActivitiesRouter.swift */,
+				34CF0E4F21B6F40B008C757F /* AddActivitiesModels.swift */,
+				34CF0E5021B6F40B008C757F /* AddActivitiesViewController.swift */,
+				34CF0E5121B6F40B008C757F /* AddActivitiesInteractor.swift */,
+			);
+			path = AddActivities;
+			sourceTree = "<group>";
+		};
+		34CF0E5821B6F502008C757F /* CustomViews */ = {
+			isa = PBXGroup;
+			children = (
+				34FBAFEA21B841B600E3AF79 /* MemberCollectionViewCell.swift */,
+			);
+			path = CustomViews;
+			sourceTree = "<group>";
+		};
+		34FBAFEC21B8463800E3AF79 /* AddMembers */ = {
+			isa = PBXGroup;
+			children = (
+				342F447D21B8475300B0B61C /* AddMembersPresenter.swift */,
+				342F447E21B8475300B0B61C /* AddMembersWorker.swift */,
+				342F447F21B8475300B0B61C /* AddMembersRouter.swift */,
+				342F448021B8475300B0B61C /* AddMembersModels.swift */,
+				342F448121B8475300B0B61C /* AddMembersViewController.swift */,
+				342F448221B8475300B0B61C /* AddMembersInteractor.swift */,
+			);
+			path = AddMembers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -135,8 +277,34 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3423531A21B5AA21000B4624 /* ViewController.swift in Sources */,
+				3423533921B5ACF5000B4624 /* ActivitiesTableViewCell.swift in Sources */,
 				3423531821B5AA21000B4624 /* AppDelegate.swift in Sources */,
+				3423533521B5AAD5000B4624 /* ActivitiesViewController.swift in Sources */,
+				34CF0E5721B6F40B008C757F /* AddActivitiesInteractor.swift in Sources */,
+				342F448821B8475300B0B61C /* AddMembersInteractor.swift in Sources */,
+				342F448B21B8581A00B0B61C /* MemberEntity+CoreDataClass.swift in Sources */,
+				3423533621B5AAD5000B4624 /* ActivitiesInteractor.swift in Sources */,
+				342F448521B8475300B0B61C /* AddMembersRouter.swift in Sources */,
+				34CF0E4321B6F234008C757F /* Common.swift in Sources */,
+				3423533221B5AAD5000B4624 /* ActivitiesWorker.swift in Sources */,
+				34CF0E5D21B70F0E008C757F /* ActivityEntity+CoreDataClass.swift in Sources */,
+				342F448621B8475300B0B61C /* AddMembersModels.swift in Sources */,
+				34CF0E5521B6F40B008C757F /* AddActivitiesModels.swift in Sources */,
+				34CF0E5621B6F40B008C757F /* AddActivitiesViewController.swift in Sources */,
+				34CF0E5421B6F40B008C757F /* AddActivitiesRouter.swift in Sources */,
+				34CF0E5321B6F40B008C757F /* AddActivitiesWorker.swift in Sources */,
+				34CF0E4A21B6F2F2008C757F /* CoreDataManager.swift in Sources */,
+				342F448421B8475300B0B61C /* AddMembersWorker.swift in Sources */,
+				3423533421B5AAD5000B4624 /* ActivitiesModels.swift in Sources */,
+				342F448321B8475300B0B61C /* AddMembersPresenter.swift in Sources */,
+				342F448C21B8581A00B0B61C /* MemberEntity+CoreDataProperties.swift in Sources */,
+				34CF0E4821B6F2B9008C757F /* ActivityTracker.xcdatamodeld in Sources */,
+				34FBAFEB21B841B600E3AF79 /* MemberCollectionViewCell.swift in Sources */,
+				342F448721B8475300B0B61C /* AddMembersViewController.swift in Sources */,
+				3423533121B5AAD5000B4624 /* ActivitiesPresenter.swift in Sources */,
+				34CF0E5E21B70F0E008C757F /* ActivityEntity+CoreDataProperties.swift in Sources */,
+				3423533321B5AAD5000B4624 /* ActivitiesRouter.swift in Sources */,
+				34CF0E5221B6F40B008C757F /* AddActivitiesPresenter.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -213,7 +381,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -268,7 +436,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -284,6 +452,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = ActivityTracker/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -301,6 +470,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = ActivityTracker/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -334,6 +504,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		34CF0E4621B6F2B9008C757F /* ActivityTracker.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				34CF0E4721B6F2B9008C757F /* ActivityTracker.xcdatamodel */,
+			);
+			currentVersion = 34CF0E4721B6F2B9008C757F /* ActivityTracker.xcdatamodel */;
+			path = ActivityTracker.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 3423530C21B5AA21000B4624 /* Project object */;
 }
