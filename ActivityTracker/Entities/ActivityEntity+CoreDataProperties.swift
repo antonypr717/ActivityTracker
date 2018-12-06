@@ -20,7 +20,7 @@ extension ActivityEntity {
     @NSManaged public var desc: String?
     @NSManaged public var dueDate: NSDate?
     @NSManaged public var image: NSData?
-    @NSManaged public var timer: NSDate?
+    @NSManaged public var timer: Double
     @NSManaged public var title: String?
     @NSManaged public var member: NSSet?
     @NSManaged public var task: NSSet?

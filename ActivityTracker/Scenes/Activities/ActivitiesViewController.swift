@@ -23,6 +23,7 @@ class ActivitiesViewController: UIViewController, ActivitiesDisplayLogic {
     
     // MARK: Object lifecycle
     @IBOutlet weak var tblView: UITableView!
+    @IBOutlet weak var messageLabel: UILabel!
     
     var activity: [Activities.Fetch.ViewModel.ActivityViewModel] = []
     
@@ -100,6 +101,8 @@ class ActivitiesViewController: UIViewController, ActivitiesDisplayLogic {
 
     
     func displaySomething(viewModel: Activities.Fetch.ViewModel) {
+        messageLabel.isHidden = viewModel.items.count < 0 ? false : true
+        tblView.isHidden = viewModel.items.count > 0 ? false : true
         activity = viewModel.items
         DispatchQueue.main.async {
             self.tblView.reloadData()
@@ -114,7 +117,13 @@ extension ActivitiesViewController: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let lCell = tableView.dequeueReusableCell(withIdentifier: "ActivitiesTableViewCell", for: indexPath) as! ActivitiesTableViewCell
+        lCell.startStopButton.tag = indexPath.row
         lCell.configureCell(with: activity[indexPath.row])
+        lCell.completionHandler = { [weak self] index, state in
+            guard let strongSelf = self else { return }
+            let request = Activities.Time.Request(index: index)
+            strongSelf.interactor?.startTimer(request: request)
+        }
         return lCell
     }
     

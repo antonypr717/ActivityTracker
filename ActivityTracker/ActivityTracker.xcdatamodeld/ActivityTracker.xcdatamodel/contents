@@ -4,7 +4,7 @@
         <attribute name="desc" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="dueDate" optional="YES" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
         <attribute name="image" optional="YES" attributeType="Binary" allowsExternalBinaryDataStorage="YES" syncable="YES"/>
-        <attribute name="timer" optional="YES" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="timer" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES" syncable="YES"/>
         <attribute name="title" optional="YES" attributeType="String" syncable="YES"/>
         <relationship name="member" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="MemberEntity" inverseName="activity" inverseEntity="MemberEntity" syncable="YES"/>
         <relationship name="task" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="TaskEntity" inverseName="activity" inverseEntity="TaskEntity" syncable="YES"/>

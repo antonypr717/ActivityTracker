@@ -25,4 +25,29 @@ class ActivitiesWorker {
         }
         catch {}
     }
+    
+    func saveTime(title: String, seconds: Double) {
+        if let context = CoreDataManager.shared.mainContext {
+            let fetchReq: NSFetchRequest<ActivityEntity> = ActivityEntity.fetchRequest()
+            fetchReq.predicate = NSPredicate(format: "title = %@", title)
+            if let results = try? context.fetch(fetchReq),
+                let item = results.first {
+                item.timer = seconds
+            }
+            CoreDataManager.shared.saveMainContext()
+        }
+    }
+    
+    func getSeconds(title: String) -> Int {
+        if let context = CoreDataManager.shared.mainContext {
+            let fetchReq: NSFetchRequest<ActivityEntity> = ActivityEntity.fetchRequest()
+            fetchReq.predicate = NSPredicate(format: "title = %@", title)
+            if let results = try? context.fetch(fetchReq),
+                let item = results.first {
+                return Int(item.timer)
+            }
+            return 0
+        }
+        return 0
+    }
 }

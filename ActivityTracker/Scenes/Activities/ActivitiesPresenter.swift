@@ -34,20 +34,26 @@ class ActivitiesPresenter: ActivitiesPresentationLogic {
     
     private func getActivityViewModel(response: Activities.Fetch.Response) -> [Activities.Fetch.ViewModel.ActivityViewModel] {
         var activities: [Activities.Fetch.ViewModel.ActivityViewModel] = []
-        for element in response.activity {
+        for (i, element) in response.activity.enumerated() {
             let members = getMembersViewModel(element: element)
             let mCount = members.count == 3 ? "+\(members.count - 2)" : ""
             let checkedCount = (element.task?.allObjects as! [TaskEntity]).filter { $0.isChecked == true }.count
             let checkList = "\(checkedCount)/\(element.task?.allObjects.count ?? 0)"
+            var start = false
+            var time = timeString(time: TimeInterval(element.timer))
+            if response.index != nil, i == response.index {
+                start = true
+                time = timeString(time: TimeInterval(response.seconds ?? 0))
+            }
             activities += [Activities.Fetch.ViewModel.ActivityViewModel(logo: UIImage(data: element.image! as Data) ?? UIImage(named: "Logo_1")!,
                                                                         membersCount: mCount,
                                                                         dueDate: dateFormatter.string(from: element.dueDate! as Date),
                                                                         title: element.title ?? "",
                                                                         desc: element.desc ?? "",
                                                                         checkList: checkList,
-                                                                        isStarted: false,
-                                                                        shouldStart: false,
-                                                                        time: "",
+                                                                        isStarted: start,
+                                                                        shouldStart: start,
+                                                                        time: time,
                                                                         members: members)]
         }
         return activities
@@ -60,5 +66,12 @@ class ActivitiesPresenter: ActivitiesPresentationLogic {
                                                                                       name: element.name ?? "")]
         }
         return members
+    }
+    
+    private func timeString(time:TimeInterval) -> String {
+        let hours = Int(time) / 3600
+        let minutes = Int(time) / 60 % 60
+        let seconds = Int(time) % 60
+        return String(format: "%02i:%02i:%02i", hours, minutes, seconds)
     }
 }

@@ -19,6 +19,8 @@ enum Activities {
         struct Request {
         }
         struct Response {
+            var index: Int?
+            var seconds: Int?
             var activity: [ActivityEntity]
         }
         struct ViewModel {
@@ -39,6 +41,18 @@ enum Activities {
                 var members: [MembersViewModel]
             }
             var items: [ActivityViewModel]
+        }
+    }
+    
+    enum Time {
+        struct Request {
+            var index: Int
+        }
+        struct Response {
+            var index: Int
+            var seconds: Int
+        }
+        struct ViewModel {
         }
     }
 }

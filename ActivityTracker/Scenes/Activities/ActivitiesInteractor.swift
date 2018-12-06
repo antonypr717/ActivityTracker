@@ -14,6 +14,7 @@ import UIKit
 
 protocol ActivitiesBusinessLogic {
     func doSomething(request: Activities.Fetch.Request)
+    func startTimer(request: Activities.Time.Request)
 }
 
 protocol ActivitiesDataStore {
@@ -24,6 +25,9 @@ class ActivitiesInteractor: ActivitiesBusinessLogic, ActivitiesDataStore {
     var presenter: ActivitiesPresentationLogic?
     lazy var worker = ActivitiesWorker()
     var activity: [ActivityEntity] = []
+    var timer: Timer?
+    var seconds = 0
+    var currentIndex: Int?
     
     // MARK: Do something
     
@@ -31,8 +35,37 @@ class ActivitiesInteractor: ActivitiesBusinessLogic, ActivitiesDataStore {
         worker.fetchActivity { [weak self] (result) in
             guard let strongSelf = self else { return }
             strongSelf.activity = result
-            let response = Activities.Fetch.Response(activity: result)
+            let response = Activities.Fetch.Response(index: nil, seconds: nil, activity: result)
             strongSelf.presenter?.presentSomething(response: response)
         }
+    }
+    
+    func startTimer(request: Activities.Time.Request) {
+        if timer == nil {
+            currentIndex = request.index
+            seconds = worker.getSeconds(title: activity[currentIndex ?? 0].title ?? "")
+            timer = Timer.scheduledTimer(timeInterval: 1,
+                                         target: self,
+                                         selector: (#selector(ActivitiesInteractor.updateTimer)),
+                                         userInfo: nil,
+                                         repeats: true)
+        } else {
+            timer?.invalidate()
+            timer = nil
+            seconds = 0
+            currentIndex = nil
+            let response = Activities.Fetch.Response(index: nil, seconds: nil, activity: activity)
+            presenter?.presentSomething(response: response)
+        }
+    }
+    
+    @objc private func updateTimer() {
+        seconds += 1
+        worker.saveTime(title: activity[currentIndex ?? 0].title ?? "", seconds: TimeInterval(seconds))
+        activity[currentIndex ?? 0].timer = TimeInterval(seconds)
+        let response = Activities.Fetch.Response(index: currentIndex,
+                                                 seconds: seconds,
+                                                 activity: activity)
+        presenter?.presentSomething(response: response)
     }
 }

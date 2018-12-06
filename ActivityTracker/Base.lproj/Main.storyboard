@@ -177,9 +177,17 @@
                                     <outlet property="delegate" destination="BYZ-38-t0r" id="knR-8I-Tc0"/>
                                 </connections>
                             </tableView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="No Activites Found" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nG1-lq-tl0">
+                                <rect key="frame" x="87.5" y="229.5" width="145" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="nG1-lq-tl0" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="LWL-T1-HA8"/>
+                            <constraint firstItem="nG1-lq-tl0" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="a4f-el-Z47"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="AWK-ri-UnS" secondAttribute="bottom" id="abz-e8-Qu2"/>
                             <constraint firstItem="AWK-ri-UnS" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="nUb-2n-L93"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="AWK-ri-UnS" secondAttribute="trailing" id="p7a-ne-2xx"/>
@@ -195,6 +203,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="messageLabel" destination="nG1-lq-tl0" id="6Im-QS-ysO"/>
                         <outlet property="tblView" destination="AWK-ri-UnS" id="fho-iD-WjH"/>
                     </connections>
                 </viewController>
@@ -207,11 +216,11 @@
             <objects>
                 <viewController storyboardIdentifier="AddActivitiesViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="im0-xX-rlr" customClass="AddActivitiesViewController" customModule="ActivityTracker" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="clG-yX-tc2">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="800"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sJw-OA-SZs">
-                                <rect key="frame" x="0.0" y="64" width="320" height="736"/>
+                                <rect key="frame" x="0.0" y="64" width="320" height="416"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Placeholder-image" translatesAutoresizingMaskIntoConstraints="NO" id="wy5-vC-0jY">
                                         <rect key="frame" x="115" y="28" width="90" height="60"/>
@@ -366,7 +375,6 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="oJn-RV-1tR"/>
                     </view>
-                    <size key="freeformSize" width="320" height="800"/>
                     <connections>
                         <outlet property="descTxt" destination="Ozb-ld-hOG" id="dpu-1e-O0P"/>
                         <outlet property="dueDateTxt" destination="Zhj-Hm-ddu" id="LUc-NX-GYD"/>
@@ -482,7 +490,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="UiA-XQ-G04" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2760" y="-28"/>
+            <point key="canvasLocation" x="2756" y="115"/>
         </scene>
         <!--Add Task View Controller-->
         <scene sceneID="eXm-mQ-zJ8">
@@ -645,7 +653,7 @@
                     </connections>
                 </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="3418.125" y="-28.75"/>
+            <point key="canvasLocation" x="3414" y="115"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="9CX-GA-G1l">

@@ -22,6 +22,8 @@ class ActivitiesTableViewCell: UITableViewCell {
     @IBOutlet weak var timerLabel: UILabel!
     @IBOutlet weak var startStopButton: UIButton!
     
+    var completionHandler: (Int, Bool) -> Void = { _, _ in }
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
@@ -44,7 +46,7 @@ class ActivitiesTableViewCell: UITableViewCell {
     }
     
     @IBAction func didTapOnButton(_ sender: Any) {
-        
+        completionHandler(startStopButton.tag, true)
     }
     
     func configureCell(with model: Activities.Fetch.ViewModel.ActivityViewModel) {
@@ -68,5 +70,7 @@ class ActivitiesTableViewCell: UITableViewCell {
         checkListLabel.text = model.checkList
         totMemberLabel.text = model.membersCount
         timerLabel.text = model.time
+        let btnImage = model.isStarted ? "Timer_2" : "Timer_1"
+        startStopButton.setImage(UIImage(named: btnImage), for: .normal)
     }
 }
