@@ -14,7 +14,7 @@ import UIKit
 import CoreData
 
 protocol ActivitiesDisplayLogic: class {
-    func displaySomething(viewModel: Activities.Something.ViewModel)
+    func displaySomething(viewModel: Activities.Fetch.ViewModel)
 }
 
 class ActivitiesViewController: UIViewController, ActivitiesDisplayLogic {
@@ -24,7 +24,7 @@ class ActivitiesViewController: UIViewController, ActivitiesDisplayLogic {
     // MARK: Object lifecycle
     @IBOutlet weak var tblView: UITableView!
     
-    var arr = [ActivityEntity]()
+    var activity: [Activities.Fetch.ViewModel.ActivityViewModel] = []
     
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
         super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
@@ -67,18 +67,17 @@ class ActivitiesViewController: UIViewController, ActivitiesDisplayLogic {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupView()
-        fetchActitivies()
-        doSomething()
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         configureNavigator()
+        doSomething()
     }
     
     // MARK: Do something
     func doSomething() {
-        let request = Activities.Something.Request()
+        let request = Activities.Fetch.Request()
         interactor?.doSomething(request: request)
     }
     
@@ -100,34 +99,22 @@ class ActivitiesViewController: UIViewController, ActivitiesDisplayLogic {
     }
 
     
-    func displaySomething(viewModel: Activities.Something.ViewModel) {
-        //nameTextField.text = viewModel.name
-    }
-    
-    func fetchActitivies() {
-        let context = CoreDataManager.shared.mainContext
-        let fetchReq: NSFetchRequest<ActivityEntity> = ActivityEntity.fetchRequest()
-        fetchReq.sortDescriptors = [NSSortDescriptor(key: "dueDate", ascending: true)]
-        
-        do {
-            if let arrUsers = try context?.fetch(fetchReq),
-                arrUsers.count > 0 {
-                arr = arrUsers
-                tblView.reloadData()
-            }
+    func displaySomething(viewModel: Activities.Fetch.ViewModel) {
+        activity = viewModel.items
+        DispatchQueue.main.async {
+            self.tblView.reloadData()
         }
-        catch {}
     }
 }
 
 extension ActivitiesViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return arr.count
+        return activity.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let lCell = tableView.dequeueReusableCell(withIdentifier: "ActivitiesTableViewCell", for: indexPath) as! ActivitiesTableViewCell
-        lCell.configureCell(with: arr[indexPath.row])
+        lCell.configureCell(with: activity[indexPath.row])
         return lCell
     }
     

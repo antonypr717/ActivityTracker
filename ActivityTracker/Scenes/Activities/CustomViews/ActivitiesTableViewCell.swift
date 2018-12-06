@@ -47,11 +47,26 @@ class ActivitiesTableViewCell: UITableViewCell {
         
     }
     
-    func configureCell(with model: ActivityEntity) {
-        logo.image = UIImage(data: model.image! as Data)
-//        firstMember.image = model.member?.allObjects.first.
-//        dueDateLabel.text = model.dueDate
+    func configureCell(with model: Activities.Fetch.ViewModel.ActivityViewModel) {
+        logo.image = model.logo
+        firstMember.isHidden = true
+        secondMember.isHidden = true
+        if model.members.count >= 2 {
+            firstMember.image = model.members.first?.photo
+            secondMember.image = model.members.last?.photo
+            firstMember.isHidden = false
+            secondMember.isHidden = false
+        } else if model.members.count >= 1 {
+            firstMember.image = model.members.first?.photo
+            firstMember.isHidden = false
+            secondMember.isHidden = true
+        }
+        firstMember.image = model.members.first?.photo
+        dueDateLabel.text = model.dueDate
         titleLabel.text = model.title
         descriptionLabel.text = model.desc
+        checkListLabel.text = model.checkList
+        totMemberLabel.text = model.membersCount
+        timerLabel.text = model.time
     }
 }

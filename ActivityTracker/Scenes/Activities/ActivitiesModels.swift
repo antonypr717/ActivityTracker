@@ -15,12 +15,30 @@ import UIKit
 enum Activities {
     // MARK: Use cases
     
-    enum Something {
+    enum Fetch {
         struct Request {
         }
         struct Response {
+            var activity: [ActivityEntity]
         }
         struct ViewModel {
+            struct ActivityViewModel {
+                struct MembersViewModel {
+                    var photo: UIImage
+                    var name: String
+                }
+                var logo: UIImage
+                var membersCount: String
+                var dueDate: String
+                var title: String
+                var desc: String
+                var checkList: String
+                var isStarted: Bool
+                var shouldStart: Bool
+                var time: String
+                var members: [MembersViewModel]
+            }
+            var items: [ActivityViewModel]
         }
     }
 }

@@ -13,16 +13,52 @@
 import UIKit
 
 protocol ActivitiesPresentationLogic {
-    func presentSomething(response: Activities.Something.Response)
+    func presentSomething(response: Activities.Fetch.Response)
 }
 
 class ActivitiesPresenter: ActivitiesPresentationLogic {
     weak var viewController: ActivitiesDisplayLogic?
-    
+    var dateFormatter: DateFormatter {
+        let formatter = DateFormatter()
+        formatter.dateFormat = "E, d MMM yyyy"
+        return formatter
+    }
+    var activities: [Activities.Fetch.ViewModel.ActivityViewModel] = []
     // MARK: Do something
     
-    func presentSomething(response: Activities.Something.Response) {
-        let viewModel = Activities.Something.ViewModel()
+    func presentSomething(response: Activities.Fetch.Response) {
+        activities = getActivityViewModel(response: response)
+        let viewModel = Activities.Fetch.ViewModel(items: activities)
         viewController?.displaySomething(viewModel: viewModel)
+    }
+    
+    private func getActivityViewModel(response: Activities.Fetch.Response) -> [Activities.Fetch.ViewModel.ActivityViewModel] {
+        var activities: [Activities.Fetch.ViewModel.ActivityViewModel] = []
+        for element in response.activity {
+            let members = getMembersViewModel(element: element)
+            let mCount = members.count == 3 ? "+\(members.count - 2)" : ""
+            let checkedCount = (element.task?.allObjects as! [TaskEntity]).filter { $0.isChecked == true }.count
+            let checkList = "\(checkedCount)/\(element.task?.allObjects.count ?? 0)"
+            activities += [Activities.Fetch.ViewModel.ActivityViewModel(logo: UIImage(data: element.image! as Data) ?? UIImage(named: "Logo_1")!,
+                                                                        membersCount: mCount,
+                                                                        dueDate: dateFormatter.string(from: element.dueDate! as Date),
+                                                                        title: element.title ?? "",
+                                                                        desc: element.desc ?? "",
+                                                                        checkList: checkList,
+                                                                        isStarted: false,
+                                                                        shouldStart: false,
+                                                                        time: "",
+                                                                        members: members)]
+        }
+        return activities
+    }
+    
+    private func getMembersViewModel(element: ActivityEntity) -> [Activities.Fetch.ViewModel.ActivityViewModel.MembersViewModel] {
+        var members: [Activities.Fetch.ViewModel.ActivityViewModel.MembersViewModel] = []
+        for element in element.member?.allObjects as? [MemberEntity] ?? [] {
+            members += [Activities.Fetch.ViewModel.ActivityViewModel.MembersViewModel(photo: UIImage(data: element.photo! as Data) ?? UIImage(named: "Member_1")!,
+                                                                                      name: element.name ?? "")]
+        }
+        return members
     }
 }

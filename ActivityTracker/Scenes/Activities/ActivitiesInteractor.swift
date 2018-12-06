@@ -13,7 +13,7 @@
 import UIKit
 
 protocol ActivitiesBusinessLogic {
-    func doSomething(request: Activities.Something.Request)
+    func doSomething(request: Activities.Fetch.Request)
 }
 
 protocol ActivitiesDataStore {
@@ -27,12 +27,12 @@ class ActivitiesInteractor: ActivitiesBusinessLogic, ActivitiesDataStore {
     
     // MARK: Do something
     
-    func doSomething(request: Activities.Something.Request) {
+    func doSomething(request: Activities.Fetch.Request) {
         worker.fetchActivity { [weak self] (result) in
             guard let strongSelf = self else { return }
             strongSelf.activity = result
+            let response = Activities.Fetch.Response(activity: result)
+            strongSelf.presenter?.presentSomething(response: response)
         }
-        let response = Activities.Something.Response()
-        presenter?.presentSomething(response: response)
     }
 }
