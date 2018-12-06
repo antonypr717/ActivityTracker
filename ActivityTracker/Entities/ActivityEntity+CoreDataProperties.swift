@@ -23,6 +23,7 @@ extension ActivityEntity {
     @NSManaged public var timer: NSDate?
     @NSManaged public var title: String?
     @NSManaged public var member: NSSet?
+    @NSManaged public var task: NSSet?
 
 }
 
@@ -40,5 +41,22 @@ extension ActivityEntity {
 
     @objc(removeMember:)
     @NSManaged public func removeFromMember(_ values: NSSet)
+
+}
+
+// MARK: Generated accessors for task
+extension ActivityEntity {
+
+    @objc(addTaskObject:)
+    @NSManaged public func addToTask(_ value: TaskEntity)
+
+    @objc(removeTaskObject:)
+    @NSManaged public func removeFromTask(_ value: TaskEntity)
+
+    @objc(addTask:)
+    @NSManaged public func addToTask(_ values: NSSet)
+
+    @objc(removeTask:)
+    @NSManaged public func removeFromTask(_ values: NSSet)
 
 }

@@ -46,4 +46,12 @@ class ActivitiesTableViewCell: UITableViewCell {
     @IBAction func didTapOnButton(_ sender: Any) {
         
     }
+    
+    func configureCell(with model: ActivityEntity) {
+        logo.image = UIImage(data: model.image! as Data)
+//        firstMember.image = model.member?.allObjects.first.
+//        dueDateLabel.text = model.dueDate
+        titleLabel.text = model.title
+        descriptionLabel.text = model.desc
+    }
 }

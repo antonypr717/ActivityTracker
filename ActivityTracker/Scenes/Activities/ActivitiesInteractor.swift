@@ -17,20 +17,21 @@ protocol ActivitiesBusinessLogic {
 }
 
 protocol ActivitiesDataStore {
-    //var name: String { get set }
+    var activity: [ActivityEntity] { get set }
 }
 
 class ActivitiesInteractor: ActivitiesBusinessLogic, ActivitiesDataStore {
     var presenter: ActivitiesPresentationLogic?
-    var worker: ActivitiesWorker?
-    //var name: String = ""
+    lazy var worker = ActivitiesWorker()
+    var activity: [ActivityEntity] = []
     
     // MARK: Do something
     
     func doSomething(request: Activities.Something.Request) {
-        worker = ActivitiesWorker()
-        worker?.doSomeWork()
-        
+        worker.fetchActivity { [weak self] (result) in
+            guard let strongSelf = self else { return }
+            strongSelf.activity = result
+        }
         let response = Activities.Something.Response()
         presenter?.presentSomething(response: response)
     }

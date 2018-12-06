@@ -26,6 +26,13 @@
 		342F448821B8475300B0B61C /* AddMembersInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 342F448221B8475300B0B61C /* AddMembersInteractor.swift */; };
 		342F448B21B8581A00B0B61C /* MemberEntity+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 342F448921B8581A00B0B61C /* MemberEntity+CoreDataClass.swift */; };
 		342F448C21B8581A00B0B61C /* MemberEntity+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 342F448A21B8581A00B0B61C /* MemberEntity+CoreDataProperties.swift */; };
+		344BA04D21B8C25F00B92CC4 /* AddTaskPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 344BA04721B8C25F00B92CC4 /* AddTaskPresenter.swift */; };
+		344BA04E21B8C25F00B92CC4 /* AddTaskWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 344BA04821B8C25F00B92CC4 /* AddTaskWorker.swift */; };
+		344BA04F21B8C25F00B92CC4 /* AddTaskRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 344BA04921B8C25F00B92CC4 /* AddTaskRouter.swift */; };
+		344BA05021B8C25F00B92CC4 /* AddTaskModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 344BA04A21B8C25F00B92CC4 /* AddTaskModels.swift */; };
+		344BA05121B8C25F00B92CC4 /* AddTaskViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 344BA04B21B8C25F00B92CC4 /* AddTaskViewController.swift */; };
+		344BA05221B8C25F00B92CC4 /* AddTaskInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 344BA04C21B8C25F00B92CC4 /* AddTaskInteractor.swift */; };
+		344BA05521B8C84D00B92CC4 /* AddTaskTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 344BA05421B8C84D00B92CC4 /* AddTaskTableViewCell.swift */; };
 		34CF0E4321B6F234008C757F /* Common.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34CF0E4221B6F234008C757F /* Common.swift */; };
 		34CF0E4821B6F2B9008C757F /* ActivityTracker.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 34CF0E4621B6F2B9008C757F /* ActivityTracker.xcdatamodeld */; };
 		34CF0E4A21B6F2F2008C757F /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34CF0E4921B6F2F2008C757F /* CoreDataManager.swift */; };
@@ -38,6 +45,8 @@
 		34CF0E5D21B70F0E008C757F /* ActivityEntity+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34CF0E5B21B70F0E008C757F /* ActivityEntity+CoreDataClass.swift */; };
 		34CF0E5E21B70F0E008C757F /* ActivityEntity+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34CF0E5C21B70F0E008C757F /* ActivityEntity+CoreDataProperties.swift */; };
 		34FBAFEB21B841B600E3AF79 /* MemberCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34FBAFEA21B841B600E3AF79 /* MemberCollectionViewCell.swift */; };
+		DEFFD9CE21B94C7100CE0B44 /* TaskEntity+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEFFD9CC21B94C7100CE0B44 /* TaskEntity+CoreDataClass.swift */; };
+		DEFFD9CF21B94C7100CE0B44 /* TaskEntity+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEFFD9CD21B94C7100CE0B44 /* TaskEntity+CoreDataProperties.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -62,6 +71,13 @@
 		342F448221B8475300B0B61C /* AddMembersInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddMembersInteractor.swift; sourceTree = "<group>"; };
 		342F448921B8581A00B0B61C /* MemberEntity+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MemberEntity+CoreDataClass.swift"; sourceTree = "<group>"; };
 		342F448A21B8581A00B0B61C /* MemberEntity+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MemberEntity+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		344BA04721B8C25F00B92CC4 /* AddTaskPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTaskPresenter.swift; sourceTree = "<group>"; };
+		344BA04821B8C25F00B92CC4 /* AddTaskWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTaskWorker.swift; sourceTree = "<group>"; };
+		344BA04921B8C25F00B92CC4 /* AddTaskRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTaskRouter.swift; sourceTree = "<group>"; };
+		344BA04A21B8C25F00B92CC4 /* AddTaskModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTaskModels.swift; sourceTree = "<group>"; };
+		344BA04B21B8C25F00B92CC4 /* AddTaskViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTaskViewController.swift; sourceTree = "<group>"; };
+		344BA04C21B8C25F00B92CC4 /* AddTaskInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTaskInteractor.swift; sourceTree = "<group>"; };
+		344BA05421B8C84D00B92CC4 /* AddTaskTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTaskTableViewCell.swift; sourceTree = "<group>"; };
 		34CF0E4221B6F234008C757F /* Common.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Common.swift; sourceTree = "<group>"; };
 		34CF0E4721B6F2B9008C757F /* ActivityTracker.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = ActivityTracker.xcdatamodel; sourceTree = "<group>"; };
 		34CF0E4921B6F2F2008C757F /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
@@ -74,6 +90,8 @@
 		34CF0E5B21B70F0E008C757F /* ActivityEntity+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ActivityEntity+CoreDataClass.swift"; sourceTree = "<group>"; };
 		34CF0E5C21B70F0E008C757F /* ActivityEntity+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ActivityEntity+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		34FBAFEA21B841B600E3AF79 /* MemberCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemberCollectionViewCell.swift; sourceTree = "<group>"; };
+		DEFFD9CC21B94C7100CE0B44 /* TaskEntity+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TaskEntity+CoreDataClass.swift"; sourceTree = "<group>"; };
+		DEFFD9CD21B94C7100CE0B44 /* TaskEntity+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TaskEntity+CoreDataProperties.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -122,6 +140,7 @@
 		3423532921B5AA61000B4624 /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
+				344BA04621B8C23D00B92CC4 /* AddTask */,
 				34FBAFEC21B8463800E3AF79 /* AddMembers */,
 				34CF0E4B21B6F3E6008C757F /* AddActivities */,
 				3423532A21B5AAA4000B4624 /* Activities */,
@@ -151,6 +170,28 @@
 			path = CustomViews;
 			sourceTree = "<group>";
 		};
+		344BA04621B8C23D00B92CC4 /* AddTask */ = {
+			isa = PBXGroup;
+			children = (
+				344BA05321B8C82D00B92CC4 /* CustomViews */,
+				344BA04721B8C25F00B92CC4 /* AddTaskPresenter.swift */,
+				344BA04821B8C25F00B92CC4 /* AddTaskWorker.swift */,
+				344BA04921B8C25F00B92CC4 /* AddTaskRouter.swift */,
+				344BA04A21B8C25F00B92CC4 /* AddTaskModels.swift */,
+				344BA04B21B8C25F00B92CC4 /* AddTaskViewController.swift */,
+				344BA04C21B8C25F00B92CC4 /* AddTaskInteractor.swift */,
+			);
+			path = AddTask;
+			sourceTree = "<group>";
+		};
+		344BA05321B8C82D00B92CC4 /* CustomViews */ = {
+			isa = PBXGroup;
+			children = (
+				344BA05421B8C84D00B92CC4 /* AddTaskTableViewCell.swift */,
+			);
+			path = CustomViews;
+			sourceTree = "<group>";
+		};
 		34CF0E4021B6F175008C757F /* Common */ = {
 			isa = PBXGroup;
 			children = (
@@ -163,6 +204,8 @@
 		34CF0E4121B6F190008C757F /* Entities */ = {
 			isa = PBXGroup;
 			children = (
+				DEFFD9CC21B94C7100CE0B44 /* TaskEntity+CoreDataClass.swift */,
+				DEFFD9CD21B94C7100CE0B44 /* TaskEntity+CoreDataProperties.swift */,
 				342F448921B8581A00B0B61C /* MemberEntity+CoreDataClass.swift */,
 				342F448A21B8581A00B0B61C /* MemberEntity+CoreDataProperties.swift */,
 				34CF0E5B21B70F0E008C757F /* ActivityEntity+CoreDataClass.swift */,
@@ -279,29 +322,38 @@
 			files = (
 				3423533921B5ACF5000B4624 /* ActivitiesTableViewCell.swift in Sources */,
 				3423531821B5AA21000B4624 /* AppDelegate.swift in Sources */,
+				344BA05521B8C84D00B92CC4 /* AddTaskTableViewCell.swift in Sources */,
 				3423533521B5AAD5000B4624 /* ActivitiesViewController.swift in Sources */,
 				34CF0E5721B6F40B008C757F /* AddActivitiesInteractor.swift in Sources */,
 				342F448821B8475300B0B61C /* AddMembersInteractor.swift in Sources */,
+				344BA05221B8C25F00B92CC4 /* AddTaskInteractor.swift in Sources */,
 				342F448B21B8581A00B0B61C /* MemberEntity+CoreDataClass.swift in Sources */,
 				3423533621B5AAD5000B4624 /* ActivitiesInteractor.swift in Sources */,
 				342F448521B8475300B0B61C /* AddMembersRouter.swift in Sources */,
 				34CF0E4321B6F234008C757F /* Common.swift in Sources */,
 				3423533221B5AAD5000B4624 /* ActivitiesWorker.swift in Sources */,
+				DEFFD9CF21B94C7100CE0B44 /* TaskEntity+CoreDataProperties.swift in Sources */,
 				34CF0E5D21B70F0E008C757F /* ActivityEntity+CoreDataClass.swift in Sources */,
 				342F448621B8475300B0B61C /* AddMembersModels.swift in Sources */,
 				34CF0E5521B6F40B008C757F /* AddActivitiesModels.swift in Sources */,
 				34CF0E5621B6F40B008C757F /* AddActivitiesViewController.swift in Sources */,
+				344BA05021B8C25F00B92CC4 /* AddTaskModels.swift in Sources */,
 				34CF0E5421B6F40B008C757F /* AddActivitiesRouter.swift in Sources */,
 				34CF0E5321B6F40B008C757F /* AddActivitiesWorker.swift in Sources */,
 				34CF0E4A21B6F2F2008C757F /* CoreDataManager.swift in Sources */,
 				342F448421B8475300B0B61C /* AddMembersWorker.swift in Sources */,
+				344BA04F21B8C25F00B92CC4 /* AddTaskRouter.swift in Sources */,
+				344BA04E21B8C25F00B92CC4 /* AddTaskWorker.swift in Sources */,
 				3423533421B5AAD5000B4624 /* ActivitiesModels.swift in Sources */,
 				342F448321B8475300B0B61C /* AddMembersPresenter.swift in Sources */,
 				342F448C21B8581A00B0B61C /* MemberEntity+CoreDataProperties.swift in Sources */,
 				34CF0E4821B6F2B9008C757F /* ActivityTracker.xcdatamodeld in Sources */,
 				34FBAFEB21B841B600E3AF79 /* MemberCollectionViewCell.swift in Sources */,
 				342F448721B8475300B0B61C /* AddMembersViewController.swift in Sources */,
+				DEFFD9CE21B94C7100CE0B44 /* TaskEntity+CoreDataClass.swift in Sources */,
 				3423533121B5AAD5000B4624 /* ActivitiesPresenter.swift in Sources */,
+				344BA05121B8C25F00B92CC4 /* AddTaskViewController.swift in Sources */,
+				344BA04D21B8C25F00B92CC4 /* AddTaskPresenter.swift in Sources */,
 				34CF0E5E21B70F0E008C757F /* ActivityEntity+CoreDataProperties.swift in Sources */,
 				3423533321B5AAD5000B4624 /* ActivitiesRouter.swift in Sources */,
 				34CF0E5221B6F40B008C757F /* AddActivitiesPresenter.swift in Sources */,

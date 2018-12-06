@@ -88,6 +88,7 @@ class AddActivitiesViewController: UIViewController, AddActivitiesDisplayLogic, 
     override func viewDidLoad() {
         super.viewDidLoad()
         setUpView()
+        addMember()
     }
     
     func addMember() {
@@ -106,11 +107,7 @@ class AddActivitiesViewController: UIViewController, AddActivitiesDisplayLogic, 
     }
     
     private func setUpView() {
-        members = [AddActivities.Member.ViewModel.MemberViewModel(title: "Add Member",
-                                                                  photo: UIImage(named: "Add-User-Placeholder") ?? UIImage(),
-                                                                  isLast: true)]
         imagePicker.delegate = self
-        
         memberCollectionView.layer.cornerRadius = 4
         memberCollectionView.layer.borderColor = UIColor.lightGray.withAlphaComponent(0.4).cgColor
         memberCollectionView.layer.borderWidth = 0.80

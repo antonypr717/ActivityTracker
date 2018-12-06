@@ -11,6 +11,7 @@
 //
 
 import UIKit
+import CoreData
 
 protocol ActivitiesDisplayLogic: class {
     func displaySomething(viewModel: Activities.Something.ViewModel)
@@ -23,7 +24,7 @@ class ActivitiesViewController: UIViewController, ActivitiesDisplayLogic {
     // MARK: Object lifecycle
     @IBOutlet weak var tblView: UITableView!
     
-    var arr = [String]()
+    var arr = [ActivityEntity]()
     
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
         super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
@@ -66,7 +67,13 @@ class ActivitiesViewController: UIViewController, ActivitiesDisplayLogic {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupView()
+        fetchActitivies()
         doSomething()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        configureNavigator()
     }
     
     // MARK: Do something
@@ -81,19 +88,50 @@ class ActivitiesViewController: UIViewController, ActivitiesDisplayLogic {
         tblView.tableFooterView = UIView()
     }
     
+    private func configureNavigator() {
+        guard let navigationController = navigationController else { return }
+        if #available(iOS 11.0, *) {
+            navigationController.navigationBar.prefersLargeTitles = true
+            navigationItem.largeTitleDisplayMode = .automatic
+        } else {
+            // Fallback on earlier versions
+        }
+        navigationController.navigationBar.sizeToFit()
+    }
+
+    
     func displaySomething(viewModel: Activities.Something.ViewModel) {
         //nameTextField.text = viewModel.name
+    }
+    
+    func fetchActitivies() {
+        let context = CoreDataManager.shared.mainContext
+        let fetchReq: NSFetchRequest<ActivityEntity> = ActivityEntity.fetchRequest()
+        fetchReq.sortDescriptors = [NSSortDescriptor(key: "dueDate", ascending: true)]
+        
+        do {
+            if let arrUsers = try context?.fetch(fetchReq),
+                arrUsers.count > 0 {
+                arr = arrUsers
+                tblView.reloadData()
+            }
+        }
+        catch {}
     }
 }
 
 extension ActivitiesViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 4
+        return arr.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let lCell = tableView.dequeueReusableCell(withIdentifier: "ActivitiesTableViewCell", for: indexPath) as! ActivitiesTableViewCell
+        lCell.configureCell(with: arr[indexPath.row])
         return lCell
     }
     
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        router?.routeToAddTask(at: indexPath.row)
+    }
 }

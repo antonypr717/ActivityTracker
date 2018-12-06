@@ -11,8 +11,18 @@
 //
 
 import UIKit
+import CoreData
 
 class ActivitiesWorker {
-    func doSomeWork() {
+    func fetchActivity(handler: @escaping ([ActivityEntity]) -> Void) {
+        let context = CoreDataManager.shared.mainContext
+        let fetchReq: NSFetchRequest<ActivityEntity> = ActivityEntity.fetchRequest()
+        fetchReq.sortDescriptors = [NSSortDescriptor(key: "dueDate", ascending: true)]
+        do {
+            if let activity = try context?.fetch(fetchReq) {
+                handler(activity)
+            }
+        }
+        catch {}
     }
 }

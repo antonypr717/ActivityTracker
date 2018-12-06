@@ -13,7 +13,7 @@
 import UIKit
 
 @objc protocol ActivitiesRoutingLogic {
-    //func routeToSomewhere(segue: UIStoryboardSegue?)
+    func routeToAddTask(at index: Int)
 }
 
 protocol ActivitiesDataPassing {
@@ -26,32 +26,16 @@ class ActivitiesRouter: NSObject, ActivitiesRoutingLogic, ActivitiesDataPassing 
     
     // MARK: Routing
     
-    //func routeToSomewhere(segue: UIStoryboardSegue?)
-    //{
-    //  if let segue = segue {
-    //    let destinationVC = segue.destination as! SomewhereViewController
-    //    var destinationDS = destinationVC.router!.dataStore!
-    //    passDataToSomewhere(source: dataStore!, destination: &destinationDS)
-    //  } else {
-    //    let storyboard = UIStoryboard(name: "Main", bundle: nil)
-    //    let destinationVC = storyboard.instantiateViewController(withIdentifier: "SomewhereViewController") as! SomewhereViewController
-    //    var destinationDS = destinationVC.router!.dataStore!
-    //    passDataToSomewhere(source: dataStore!, destination: &destinationDS)
-    //    navigateToSomewhere(source: viewController!, destination: destinationVC)
-    //  }
-    //}
+    func routeToAddTask(at index: Int) {
+        let vc = viewController?.storyboard?.instantiateViewController(withIdentifier: "AddTaskViewController") as! AddTaskViewController
+        var destinationDS = vc.router!.dataStore!
+        passDataToVC(at: index, source: dataStore!, destination: &destinationDS)
+        viewController?.navigationController?.pushViewController(vc, animated: true)
+    }
     
-    // MARK: Navigation
+    //MARK: Passing data
     
-    //func navigateToSomewhere(source: ActivitiesViewController, destination: SomewhereViewController)
-    //{
-    //  source.show(destination, sender: nil)
-    //}
-    
-    // MARK: Passing data
-    
-    //func passDataToSomewhere(source: ActivitiesDataStore, destination: inout SomewhereDataStore)
-    //{
-    //  destination.name = source.name
-    //}
+    func passDataToVC(at index: Int, source: ActivitiesDataStore, destination: inout AddTaskDataStore) {
+        destination.activity = source.activity[index]
+    }
 }

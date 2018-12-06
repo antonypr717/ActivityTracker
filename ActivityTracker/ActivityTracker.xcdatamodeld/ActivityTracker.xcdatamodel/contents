@@ -7,14 +7,23 @@
         <attribute name="timer" optional="YES" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
         <attribute name="title" optional="YES" attributeType="String" syncable="YES"/>
         <relationship name="member" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="MemberEntity" inverseName="activity" inverseEntity="MemberEntity" syncable="YES"/>
+        <relationship name="task" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="TaskEntity" inverseName="activity" inverseEntity="TaskEntity" syncable="YES"/>
     </entity>
     <entity name="MemberEntity" representedClassName="MemberEntity" syncable="YES">
         <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="photo" optional="YES" attributeType="Binary" allowsExternalBinaryDataStorage="YES" syncable="YES"/>
         <relationship name="activity" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="ActivityEntity" inverseName="member" inverseEntity="ActivityEntity" syncable="YES"/>
     </entity>
+    <entity name="TaskEntity" representedClassName="TaskEntity" syncable="YES">
+        <attribute name="activityId" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="index" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="isChecked" optional="YES" attributeType="Boolean" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="title" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="activity" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="ActivityEntity" inverseName="task" inverseEntity="ActivityEntity" syncable="YES"/>
+    </entity>
     <elements>
-        <element name="ActivityEntity" positionX="-63" positionY="-18" width="128" height="135"/>
+        <element name="ActivityEntity" positionX="-63" positionY="-18" width="128" height="150"/>
         <element name="MemberEntity" positionX="-63" positionY="18" width="128" height="90"/>
+        <element name="TaskEntity" positionX="-54" positionY="36" width="128" height="120"/>
     </elements>
 </model>
